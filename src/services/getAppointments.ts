@@ -142,16 +142,16 @@ export default getAppointments;
 export interface IAppointments {
   id: string;
   type: string;
-  tasks: [
-    {
-      id: string;
-      name: string;
-      priority: string;
-      origin: string;
-      shortDescription: string;
-      largeDescription: string;
-      date: string;
-      coordinates: { latitude: number; longitude: number };
-    }
-  ];
+  tasks: ITasks[];
+}
+
+export interface ITasks {
+  id: string;
+  name: string;
+  priority: string;
+  origin: string;
+  shortDescription: string;
+  largeDescription: string;
+  date: string;
+  coordinates: { latitude: number; longitude: number };
 }

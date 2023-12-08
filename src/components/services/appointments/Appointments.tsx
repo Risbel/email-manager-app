@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import getAppointments, { IAppointments } from "@/services/getAppointments";
 import { useEffect, useState } from "react";
-import SkeletonAppointment from "./SkeletonAppointment";
+import SkeletonAppointment from "./SkeletonAppointments";
+import DetailsAppointment from "./DetailsAppointment";
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState<IAppointments[] | null>(null);
@@ -49,9 +50,7 @@ const Appointments = () => {
                           <p className="text-xs text-gray-300">Latitude: {task.coordinates.latitude}</p>
                           <p className="text-xs text-gray-300">Longitude: {task.coordinates.longitude}</p>
 
-                          <Button variant={"secondary"} className="h-8 mt-4">
-                            Details
-                          </Button>
+                          <DetailsAppointment task={task} />
                         </div>
                       ))}
                     </div>
