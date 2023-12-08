@@ -12,7 +12,7 @@ export default function Home() {
     <HomeLayout>
       <main className={`${inter.className}`}>
         <section id="hero">
-          <div className="flex justify-center pt-20 pb-8 bg-gray-200">
+          <div className="flex justify-center py-8 bg-gray-200">
             <div className="flex gap-2 md:gap-4 items-center">
               <Image
                 src={"/mail-svgrepo-com (1).svg"}
