@@ -9,7 +9,7 @@ const CardServices = ({ className, item, ...props }: ICardServices) => {
         <Image src={`${item.urlImage}`} width={100} height={100} alt="" />
       </div>
 
-      <div className="bg-gray-300 rounded-xl py-2">
+      <div className="bg-gray-300 rounded-xl py-2 sha">
         <p className="text-center  md:text-xl font-bold text-gray-800">{item.name.toUpperCase()}</p>
       </div>
     </div>
@@ -18,7 +18,9 @@ const CardServices = ({ className, item, ...props }: ICardServices) => {
 
 export default CardServices;
 
-const cardServices = cva(["flex flex-col justify-between bg-gray-700 px-4 md:px-8 py-4 rounded-3xl"]);
+const cardServices = cva([
+  "flex flex-col justify-between bg-gray-700 px-4 md:px-8 py-4 rounded-3xl hover:scale-[102%] shadow hover:shadow-xl",
+]);
 
 export interface ICardServices extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardServices> {
   item: { id: string; urlImage: string; name: string };

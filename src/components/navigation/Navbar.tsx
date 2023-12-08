@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import Sidebar from "./Sidebar";
+import CardRegister from "../CardRegister";
 
 const Navbar = () => {
   const { pathname } = useRouter();
@@ -42,7 +43,7 @@ const Navbar = () => {
           <Link
             key={navItem.name}
             className={cn(
-              "text-center text-gray-300 font-thin px-2",
+              "text-center text-gray-300 font-thin px-2 hover:text-white",
               navItem.current && "scale-105 text-white font-normal"
             )}
             href={`${navItem.href}`}
@@ -56,7 +57,7 @@ const Navbar = () => {
           <Image src={"/search-svgrepo-com.svg"} width={28} height={28} alt="logo-em" priority />
         </button>
         <button className="hover:scale-105">
-          <Image src={"/profile-circle-svgrepo-com.svg"} width={28} height={28} alt="logo-em" priority />
+          <CardRegister />
         </button>
         <button className="hover:scale-110">
           <Image src={"/dots-3-vertical-svgrepo-com.svg"} width={20} height={20} alt="logo-em" priority />
