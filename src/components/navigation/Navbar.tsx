@@ -56,9 +56,9 @@ const Navbar = () => {
         <button className="hover:scale-105">
           <Image src={"/search-svgrepo-com.svg"} width={28} height={28} alt="logo-em" priority />
         </button>
-        <button className="hover:scale-105">
-          <CardRegister />
-        </button>
+
+        <CardRegister />
+
         <button className="hover:scale-110">
           <Image src={"/dots-3-vertical-svgrepo-com.svg"} width={20} height={20} alt="logo-em" priority />
         </button>

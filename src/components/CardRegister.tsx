@@ -1,12 +1,12 @@
 import React from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const CardRegister = () => {
   return (
     <Dialog>
-      <DialogTrigger className="translate-y-[2px]">
+      <DialogTrigger className="hover:scale-105">
         <Image src={"/profile-circle-svgrepo-com.svg"} width={28} height={28} alt="logo-em" priority />
       </DialogTrigger>
       <DialogContent className="h-5/6 w-screen md:w-10/12 p-14 overflow-hidden overflow-y-auto">

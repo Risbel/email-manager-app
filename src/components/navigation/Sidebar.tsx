@@ -40,7 +40,7 @@ const Sidebar = ({ items }: { items: INavigation[] }) => {
                 className={cn("text-center text-gray-300 font-thin", item.current && "text-white font-semibold")}
                 href={item.href}
               >
-                <p>{item.name}</p>
+                {item.name}
               </Link>
             ))}
           </div>

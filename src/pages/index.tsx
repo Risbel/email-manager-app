@@ -35,10 +35,6 @@ export default function Home() {
           </div>
         </section>
         <section id="services">
-          <div className="bg-gray-400 py-8">
-            <p className="text-center text-xl font-bold text-gray-800">SERVICES</p>
-          </div>
-
           <Services />
         </section>
       </main>
