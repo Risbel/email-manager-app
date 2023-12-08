@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import HomeLayout from "@/components/layouts/HomeLayout";
 import CardDetails from "@/components/CardDetails";
 import CardCalendar from "@/components/CardCalendar";
+import Services from "@/components/services/Services";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,63 +39,7 @@ export default function Home() {
             <p className="text-center text-xl font-bold text-gray-800">SERVICES</p>
           </div>
 
-          <div className="grid justify-center gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-3 px-16 py-8">
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center">
-                <Image src={"/agreement-bussiness-hands-svgrepo-com.svg"} width={180} height={180} alt="" />
-              </div>
-
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">APPOINTMENTS</p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center p-8">
-                <Image
-                  src={"/medical-notes-symbol-of-a-list-paper-on-a-clipboard-svgrepo-com.svg"}
-                  width={100}
-                  height={100}
-                  alt=""
-                />
-              </div>
-
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">TASKS</p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center p-8">
-                <Image src={"/time-svgrepo-com.svg"} width={100} height={100} alt="" />
-              </div>
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">PENDING</p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center p-8">
-                <Image src={"/chat-alert-left-3-svgrepo-com.svg"} width={100} height={100} alt="" />
-              </div>
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">PRIORITY</p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center p-8">
-                <Image src={"/list-ol-svgrepo-com.svg"} width={100} height={100} alt="" />
-              </div>
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">REGISTER</p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-between bg-gray-700 px-6 md:px-8 py-4 rounded-3xl">
-              <div className="flex justify-center p-8">
-                <Image src={"/agenda-svgrepo-com.svg"} width={100} height={100} alt="" />
-              </div>
-              <div className="bg-gray-300 rounded-xl py-2">
-                <p className="text-center  md:text-xl font-bold text-gray-800">SMART AGENDA</p>
-              </div>
-            </div>
-          </div>
+          <Services />
         </section>
       </main>
     </HomeLayout>
