@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import getAppointments, { IAppointments } from "@/services/getAppointments";
 import { useEffect, useState } from "react";
+import SkeletonAppointment from "./SkeletonAppointment";
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState<IAppointments[] | null>(null);
@@ -25,7 +26,9 @@ const Appointments = () => {
   return (
     <div>
       {isLoading ? (
-        <div>Loading...</div>
+        <div>
+          <SkeletonAppointment />
+        </div>
       ) : (
         <div className="overflow-hidden overflow-x-scroll w-full bg-gray-300 px-4 md:px-8">
           <div className="flex flex-col gap-6 md:gap-8 pb-20">

@@ -133,7 +133,7 @@ const getAppointments = () => {
       ];
 
       resolve(appointments);
-    }, 3000);
+    }, 1000);
   });
 };
 
