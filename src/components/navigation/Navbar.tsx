@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const { pathname } = useRouter();
@@ -17,22 +18,20 @@ const Navbar = () => {
     },
     {
       name: "About Us",
-      href: "/about-us",
-      current: isCurrentPath("/about-us"),
+      href: "/about_us",
+      current: isCurrentPath("/about_us"),
     },
     {
       name: "Virtual Secretary",
-      href: "/virtual-secretary",
-      current: isCurrentPath("/virtual-secretary"),
+      href: "/virtual_secretary",
+      current: isCurrentPath("/virtual_secretary"),
     },
   ];
 
   return (
     <div className="flex fixed z-50 w-full justify-between items-center px-2 md:px-8 py-3 bg-gray-700 shadow-gray-400 shadow-md">
       <div className="flex gap-4 md:gap-8 items-center">
-        <button>
-          <Image src={"/menu-svgrepo-com.svg"} width={28} height={28} alt="menu icon" />
-        </button>
+        <Sidebar items={navigation} />
 
         <Link href={"/"} className="flex -translate-y-1 hover:scale-105">
           <Image src={"/logo-em.png"} width={70} height={35} alt="logo-em" priority />
@@ -43,7 +42,7 @@ const Navbar = () => {
           <Link
             key={navItem.name}
             className={cn(
-              "rext-center text-gray-300 font-thin px-2",
+              "text-center text-gray-300 font-thin px-2",
               navItem.current && "scale-105 text-white font-normal"
             )}
             href={`${navItem.href}`}
@@ -68,3 +67,9 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+export interface INavigation {
+  name: string;
+  href: string;
+  current: boolean;
+}
