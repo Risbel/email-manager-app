@@ -2,17 +2,17 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const SkeletonAppointments = () => {
   return (
-    <div className="flex flex-col px-4 gap-6 overflow-hidden overflow-x-scroll w-full bg-gray-300 md:px-8">
+    <div className="flex flex-col px-4 gap-6 overflow-hidden overflow-x-scroll w-full bg-secondary md:px-8">
       {[1, 2, 3].map((row) => {
         return (
           <div key={row}>
-            <Skeleton className="bg-gray-700 rounded-xl h-6 w-24 md:h-8 md:w-32 mb-3 md:mb-4 ml-3" />
+            <Skeleton className="bg-primary rounded-xl h-6 w-24 md:h-8 md:w-32 mb-3 md:mb-4 ml-3" />
             <div className="flex gap-8 md:gap-12">
-              <Skeleton className="bg-gray-700 rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
-              <Skeleton className="bg-gray-700 rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
-              <Skeleton className="bg-gray-700 rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
-              <Skeleton className="bg-gray-700 rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
-              <Skeleton className="bg-gray-700 rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
+              <Skeleton className="bg-primary rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
+              <Skeleton className="bg-primary rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
+              <Skeleton className="bg-primary rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
+              <Skeleton className="bg-primary rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
+              <Skeleton className="bg-primary rounded-xl min-w-[180px] min-h-[180px] md:min-w-[310px] md:min-h-[180px] lg:min-w-[400px] lg:min-h-[180px]" />
             </div>
           </div>
         );

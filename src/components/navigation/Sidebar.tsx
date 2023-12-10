@@ -30,14 +30,17 @@ const Sidebar = ({ items }: { items: INavigation[] }) => {
             <button className="absolute left-2 top-2" onClick={() => setIsActive((prev) => !prev)}>
               ✖️
             </button>
-            <h2 className="text-white text-center text-lg">Navigation</h2>
+            <h2 className="accent-foreground text-center text-lg">Navigation</h2>
           </div>
 
           <div className="flex flex-col gap-4 p-6 items-start">
             {items.map((item) => (
               <Link
                 key={item.name}
-                className={cn("text-center text-gray-300 font-thin", item.current && "text-white font-semibold")}
+                className={cn(
+                  "text-center text-secondary font-thin",
+                  item.current && "accent-foreground font-semibold"
+                )}
                 href={item.href}
               >
                 {item.name}

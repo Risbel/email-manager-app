@@ -15,14 +15,14 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        caption: "flex justify-center relative items-center",
-        caption_label: "text-md font-semibold bg-accent py-2 px-6 rounded-2xl",
+        caption: "flex justify-start relative items-center",
+        caption_label: "text-md font-semibold bg-secondary py-2 px-6 rounded-2xl",
         nav: "space-x-1 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
           "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
         ),
-        nav_button_previous: "absolute left-1",
+        nav_button_previous: "absolute right-12 md:right-16",
         nav_button_next: "absolute right-1",
         table: "w-full border-collapse space-y-1",
         head_row: "flex gap-1 md:gap-4 lg:gap-6",
@@ -32,12 +32,12 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         day: cn(buttonVariants({ variant: "ghost" }), "h-9 w-9 px-4 font-normal aria-selected:opacity-100"),
         day_range_end: "day-range-end",
         day_selected:
-          "bg-gray-700 text-primary hover:bg-gray-700 hover:text-primary-foreground focus:bg-gray-700 focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
+          "bg-primary text-primary hover:bg-primary text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+        day_today: "bg-secondary text-secondary-foreground",
         day_outside:
-          "day-outside text-thin text-xs opacity-80 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
+          "day-outside text-thin text-xs opacity-80 aria-selected:bg-secondary/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
         day_disabled: "text-light opacity-50",
-        day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
+        day_range_middle: "aria-selected:bg-secondary aria-selected:text-secondary-foreground",
         day_hidden: "invisible",
         ...classNames,
       }}

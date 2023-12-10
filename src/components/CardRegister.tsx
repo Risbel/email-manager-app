@@ -2,6 +2,7 @@ import React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Button } from "./ui/button";
 
 const CardRegister = () => {
   return (
@@ -21,9 +22,9 @@ const CardRegister = () => {
                 className="h-6 w-6 lg:h-8 lg:w-8"
               />
 
-              <h2 className="text-gray-700 lg:text-2xl font-bold">EMAIL MANAGEMENT</h2>
+              <h2 className="text-primary lg:text-2xl font-bold">EMAIL MANAGEMENT</h2>
             </div>
-            <p className="lg:pl-10 pt-2 lg:text-lg text-gray-600">Fill the correspondent field</p>
+            <p className="lg:pl-10 pt-2 lg:text-lg text-primary">Fill the correspondent field</p>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -33,54 +34,64 @@ const CardRegister = () => {
               action=""
             >
               <div className="flex flex-col relative">
-                <label className="absolute -top-4 left-3 bg-white px-1" htmlFor="email">
+                <label
+                  className="absolute -top-[14px] left-3 bg-accent-foreground text-primary px-1 text-sm"
+                  htmlFor="email"
+                >
                   Email
                 </label>
                 <input
                   autoComplete="email"
                   placeholder="email"
                   type="email"
-                  className="h-10 lg:h-12 border border-gray-600 rounded-sm px-3"
+                  className="h-10 lg:h-12 border border-primary rounded-sm px-3"
                 />
               </div>
               <div className="flex flex-col relative">
-                <label className="absolute -top-4 left-3 bg-white px-1" htmlFor="emailServer">
+                <label
+                  className="absolute -top-[14px] left-3 bg-accent-foreground text-primary px-1 text-sm"
+                  htmlFor="emailServer"
+                >
                   Email Server
                 </label>
                 <input
                   autoComplete="current-password"
                   placeholder="email server"
                   type="password"
-                  className="h-10 lg:h-12 border border-gray-600 rounded-sm px-3"
+                  className="h-10 lg:h-12 border border-primary rounded-sm px-3"
                 />
               </div>
               <div className="flex flex-col relative">
-                <label className="absolute -top-4 left-3 bg-white px-1" htmlFor="port">
+                <label
+                  className="absolute -top-[14px] left-3 bg-accent-foreground text-primary px-1 text-sm"
+                  htmlFor="port"
+                >
                   Port
                 </label>
                 <input
                   autoComplete="current-password"
                   placeholder="port"
                   type="password"
-                  className="h-10 lg:h-12 border border-gray-600 rounded-sm px-3"
+                  className="h-10 lg:h-12 border border-primary rounded-sm px-3"
                 />
               </div>
 
               <div className="flex flex-col relative">
-                <label className="absolute -top-4 left-3 bg-white px-1" htmlFor="password">
+                <label
+                  className="absolute -top-[14px] left-3 bg-accent-foreground text-primary px-1 text-sm"
+                  htmlFor="password"
+                >
                   Password
                 </label>
                 <input
                   autoComplete="current-password"
                   placeholder="password"
                   type="password"
-                  className="h-10 lg:h-12 border border-gray-600 rounded-sm px-3"
+                  className="h-10 lg:h-12 border border-primary rounded-sm px-3"
                 />
               </div>
 
-              <button type="submit" className="text-white py-2 lg:py-4 rounded-lg bg-gray-700">
-                REGISTER
-              </button>
+              <Button type="submit">REGISTER</Button>
             </form>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 pb-6">
@@ -92,7 +103,7 @@ const CardRegister = () => {
               />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <p className="md:text-3xl text-gray-700 font-semibold">Kevin Ramírez</p>
+            <p className="md:text-3xl text-primary font-semibold">Kevin Ramírez</p>
           </div>
         </div>
       </DialogContent>

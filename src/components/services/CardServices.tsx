@@ -19,7 +19,7 @@ const CardServices = ({ setService, className, item, ...props }: ICardServices) 
 export default CardServices;
 
 const cardServices = cva([
-  "flex flex-col justify-between bg-gray-700 px-4 md:px-8 py-4 rounded-3xl hover:scale-[102%] shadow hover:shadow-xl",
+  "flex flex-col justify-between bg-primary px-4 md:px-8 py-4 rounded-3xl hover:scale-[102%] shadow hover:shadow-xl",
 ]);
 
 export interface ICardServices extends React.HTMLAttributes<HTMLButtonElement>, VariantProps<typeof cardServices> {

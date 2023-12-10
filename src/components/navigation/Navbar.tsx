@@ -30,7 +30,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex fixed z-50 w-full justify-between items-center px-2 md:px-8 py-3 bg-gray-700 shadow-gray-400 shadow-md">
+    <div className="flex fixed z-50 w-full justify-between items-center px-2 md:px-8 py-3 bg-primary shadow-silverdark shadow-md">
       <div className="flex gap-4 md:gap-8 items-center">
         <Sidebar items={navigation} />
 
@@ -43,8 +43,8 @@ const Navbar = () => {
           <Link
             key={navItem.name}
             className={cn(
-              "text-center text-gray-300 font-thin px-2 hover:text-white",
-              navItem.current && "scale-105 text-white font-normal"
+              "text-center text-secondary/70 hover:text-accent-foreground font-thin px-2 text-sm ",
+              navItem.current && "scale-110 accent-foreground text-accent-foreground"
             )}
             href={`${navItem.href}`}
           >
