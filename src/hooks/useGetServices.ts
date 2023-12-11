@@ -1,42 +1,58 @@
-const useGetServices = (): IServices => {
+const useGetServices = (): { data: IServices[] } => {
   const data = [
     {
       id: "1",
-      urlImage: "/agreement-deal-friends-svgrepo-com.svg",
+      urlImage: "/agreement-deal-friends.svg",
       name: "appointments",
+      width: 150,
+      height: 150,
     },
     {
       id: "2",
-      urlImage: "/medical-notes-symbol-of-a-list-paper-on-a-clipboard-svgrepo-com.svg",
+      urlImage: "/clipboard-list.svg",
       name: "tasks",
+      width: 100,
+      height: 100,
     },
     {
       id: "3",
-      urlImage: "/time-svgrepo-com.svg",
+      urlImage: "/clock.svg",
       name: "pending",
+      width: 120,
+      height: 120,
     },
     {
       id: "4",
-      urlImage: "/chat-alert-left-3-svgrepo-com.svg",
+      urlImage: "/alert-right.svg",
       name: "priority",
+      width: 110,
+      height: 110,
     },
     {
       id: "5",
-      urlImage: "/list-ol-svgrepo-com.svg",
+      urlImage: "/register.svg",
       name: "register",
+      width: 115,
+      height: 115,
     },
     {
       id: "6",
-      urlImage: "/agenda-svgrepo-com.svg",
+      urlImage: "/smart-agenda.svg",
       name: "smart agenda",
+      width: 100,
+      height: 100,
     },
   ];
 
-  return { data };
+  return { data: data };
 };
 
 export default useGetServices;
 
 interface IServices {
-  data: { id: string; urlImage: string; name: string }[];
+  id: string;
+  urlImage: string;
+  name: string;
+  width: number;
+  height: number;
 }

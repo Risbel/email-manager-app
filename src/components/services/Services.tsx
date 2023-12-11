@@ -13,8 +13,8 @@ const Services = () => {
   return (
     <div>
       <div className={cn(service != 0 && "hidden")}>
-        <div className="bg-gray-400 py-8">
-          <p className="text-center md:text-xl font-bold text-gray-800">SERVICES</p>
+        <div className="bg-muted py-8">
+          <p className="text-center md:text-xl font-bold text-muted-foreground">SERVICES</p>
         </div>
         <div className={cn("grid justify-center gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-16 py-8")}>
           {items.map((item) => (

@@ -34,8 +34,8 @@ const Navbar = () => {
       <div className="flex gap-4 md:gap-8 items-center">
         <Sidebar items={navigation} />
 
-        <Link href={"/"} className="flex -translate-y-1 hover:scale-105">
-          <Image src={"/logo-em.png"} width={70} height={35} alt="logo-em" priority />
+        <Link href={"/"} className="flex">
+          <Image src={"/white-horizontal-logo.svg"} width={70} height={35} alt="logo-em" priority />
         </Link>
       </div>
       <div className="hidden md:flex gap-2">
@@ -43,8 +43,8 @@ const Navbar = () => {
           <Link
             key={navItem.name}
             className={cn(
-              "text-center text-secondary/70 hover:text-accent-foreground font-thin px-2 text-sm ",
-              navItem.current && "scale-110 accent-foreground text-accent-foreground"
+              "text-center text-secondary/80 hover:text-accent-foreground font-thin px-2 text-sm ",
+              navItem.current && "scale-110 accent-foreground text-accent-foreground font-normal"
             )}
             href={`${navItem.href}`}
           >
