@@ -5,17 +5,25 @@ import { useRouter } from "next/router";
 import React from "react";
 import Sidebar from "./Sidebar";
 import CardRegister from "../CardRegister";
+import useHandleScroll from "@/hooks/useHandleScroll";
 
 const Navbar = () => {
+  const { handleScroll, currentSection } = useHandleScroll();
   const { pathname } = useRouter();
 
-  const isCurrentPath = (path: string) => path === pathname;
+  const isCurrentPath = (path: any) => path === pathname || path === currentSection;
 
   const navigation = [
+    // {
+    //   type: "scrolling",
+    //   name: "Services",
+    //   href: "#services",
+    //   current: isCurrentPath("services"),
+    // },
     {
-      name: "Services",
-      href: "/services",
-      current: isCurrentPath("/services"),
+      name: "Home",
+      href: "/",
+      current: isCurrentPath("/"),
     },
     {
       name: "About Us",
@@ -39,7 +47,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="hidden md:flex gap-2">
-        {navigation.map((navItem) => (
+        {navigation.map((navItem): any => (
           <Link
             key={navItem.name}
             className={cn(

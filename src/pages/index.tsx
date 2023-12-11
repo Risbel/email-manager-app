@@ -25,7 +25,7 @@ export default function Home() {
               <h2 className="text-primary text-lg md:text-2xl font-bold">EMAIL MANAGEMENT</h2>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 lg:gap-8 px-4 md:px-12 lg:px-32 my-20 md:my-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 lg:gap-8 px-4 md:px-12 lg:px-32 my-12 md:my-16">
             <div className="flex justify-center">
               <CardDetails />
             </div>
