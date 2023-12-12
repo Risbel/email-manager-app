@@ -1,15 +1,18 @@
+"use client";
+
 import { cn } from "@/lib/shadcn-utils";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 import React from "react";
 import Sidebar from "./Sidebar";
 import CardRegister from "../CardRegister";
 import useHandleScroll from "@/hooks/useHandleScroll";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const { handleScroll, currentSection } = useHandleScroll();
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   const isCurrentPath = (path: any) => path === pathname || path === currentSection;
 

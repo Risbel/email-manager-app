@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import CardServices from "./CardServices";
 import { cn } from "@/lib/shadcn-utils";

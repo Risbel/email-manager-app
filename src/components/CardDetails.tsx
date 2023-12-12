@@ -1,14 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Skeleton } from "./ui/skeleton";
 
 const CardDetails = () => {
   return (
     <div className="relative bg-primary rounded-3xl p-4 md:p-12">
       <div className="flex justify-start">
         <div className="flex flex-col items-center gap-3">
-          <Avatar className="h-16 md:h-28 w-16 md:w-28 rounded-full overflow-hidden">
+          <Avatar className="h-16 w-16 md:h-28 md:w-28 rounded-full overflow-hidden">
             <AvatarImage src={"/profile-picture.png"} alt="profile picture" className="h-16 w-16 md:h-28 md:w-28" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>
+              <Skeleton className="relative z-20 w-full h-full bg-primary/70" />
+            </AvatarFallback>
           </Avatar>
           <p className="text-xs md:text-base text-accent-foreground font-semibold">Kevin Ramírez</p>
         </div>
