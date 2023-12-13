@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar } from "./ui/calendar";
+import { Calendar } from "../ui/calendar";
 import RecentNotifications from "./RecentNotifications";
 
 const CardCalendar = () => {

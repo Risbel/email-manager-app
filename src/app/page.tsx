@@ -1,5 +1,5 @@
-import CardCalendar from "@/components/CardCalendar";
-import CardDetails from "@/components/CardDetails";
+import CardCalendar from "@/components/hero/CardCalendar";
+import CardDetails from "@/components/hero/CardDetails";
 
 import Services from "@/components/services/Services";
 import Image from "next/image";

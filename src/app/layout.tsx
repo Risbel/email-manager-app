@@ -1,5 +1,6 @@
 import Navbar from "@/components/navigation/Navbar";
 import "../styles/globals.css";
+import RqProvider from "@/utils/RqProvider";
 export const metadata = {
   title: "Secretary",
   description: "Virtual Secretary",
@@ -11,7 +12,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <div className="pt-14">{children}</div>
+        <div className="pt-14">
+          <RqProvider>{children}</RqProvider>
+        </div>
       </body>
     </html>
   );

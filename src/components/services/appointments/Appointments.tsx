@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import getAppointments, { IAppointments } from "@/services/getAppointments";
 import { useEffect, useState } from "react";
 import SkeletonAppointment from "./SkeletonAppointments";

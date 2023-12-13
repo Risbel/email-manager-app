@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Skeleton } from "./ui/skeleton";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Skeleton } from "../ui/skeleton";
 
 const CardDetails = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import CardServices from "./CardServices";
+import CardService from "./CardService";
 import { cn } from "@/lib/shadcn-utils";
 import ServiceLayout from "../layouts/ServiceLayout";
 import Appointments from "./appointments/Appointments";
@@ -23,7 +23,7 @@ const Services = () => {
           className={cn("grid justify-center gap-4 md:gap-8 md:grid-cols-2 lg:grid-cols-3 px-4 md:px-16 lg:px-36 py-8")}
         >
           {items.map((item) => (
-            <CardServices setService={setService} key={item.id} item={item} />
+            <CardService setService={setService} key={item.id} item={item} />
           ))}
         </div>
       </div>

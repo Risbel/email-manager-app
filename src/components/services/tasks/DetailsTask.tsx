@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogOverlay, DialogTrigger } from "@/component
 const DetailsTask = () => {
   return (
     <Dialog>
-      <DialogTrigger className="flex justify-center items-center h-8 mt-4 hover:bg-primary/90 py-2 px-3 rounded-md bg-primary text-primary-foreground ">
+      <DialogTrigger className="flex justify-center items-center h-8 hover:bg-primary/90 py-2 px-3 rounded-md bg-primary text-primary-foreground ">
         <span className="text-sm">Details</span>
       </DialogTrigger>
       <DialogContent className="h-5/6 w-screen md:w-9/12 p-14 overflow-hidden overflow-y-auto px-6 md:px-10">
