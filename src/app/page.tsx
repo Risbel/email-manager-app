@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Home = () => {
   return (
-    <main>
+    <main className="pt-12">
       <section id="hero">
         <div className="flex justify-center py-8 bg-secondary">
           <div className="flex gap-2 md:gap-4 items-center">

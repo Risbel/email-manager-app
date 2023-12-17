@@ -8,7 +8,7 @@ const CardRegister = () => {
   return (
     <Dialog>
       <DialogTrigger className="hover:scale-105">
-        <Image src={"/profile-circle-svgrepo-com.svg"} width={28} height={28} alt="logo-em" priority />
+        <Image src={"/dots-3-vertical-svgrepo-com.svg"} width={20} height={20} alt="logo-em" priority />
       </DialogTrigger>
       <DialogContent className="h-5/6 w-screen md:w-10/12 p-14 overflow-hidden overflow-y-auto">
         <div className="flex flex-col-reverse lg:grid grid-cols-2">
