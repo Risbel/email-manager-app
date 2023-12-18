@@ -1,3 +1,4 @@
+"use client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,37 +13,23 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react";
+import { Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, Settings, User, UserPlus, Users } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { useSession, signOut } from "next-auth/react";
+import { Skeleton } from "../ui/skeleton";
 
 const DropdownUserSettings = () => {
   const { data: session } = useSession();
 
   if (!session) {
-    return;
+    return <Skeleton className="h-8 w-8 rounded-full" />;
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="hover:scale-105">
         {session.user?.image ? (
-          <Avatar className="h-8 w-8 border-2 border-primary-foreground">
+          <Avatar className="h-8 w-8 border-2 border-primary-foreground cursor-pointer">
             <AvatarImage src={session.user.image} alt="avatar profile" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
@@ -69,11 +56,6 @@ const DropdownUserSettings = () => {
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard className="mr-2 h-4 w-4" />
-            <span>Billing</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Settings className="mr-2 h-4 w-4" />
@@ -107,11 +89,6 @@ const DropdownUserSettings = () => {
                   <MessageSquare className="mr-2 h-4 w-4" />
                   <span>Message</span>
                 </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  <span>More...</span>
-                </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
@@ -125,10 +102,6 @@ const DropdownUserSettings = () => {
         <DropdownMenuItem>
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem disabled>
-          <Cloud className="mr-2 h-4 w-4" />
-          <span>API</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>

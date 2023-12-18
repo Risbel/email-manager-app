@@ -1,10 +1,39 @@
+"use client";
 import { cn } from "@/lib/shadcn-utils";
+import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { INavigation } from "./Navbar";
 
-const Sidebar = ({ items }: { items: INavigation[] }) => {
+const Sidebar = () => {
+  const pathname = usePathname();
+
+  const isCurrentPath = (path: any) => path === pathname;
+
+  const navigation: INavigation[] = [
+    {
+      name: "Home",
+      href: "/",
+      current: isCurrentPath("/"),
+    },
+    {
+      name: "Services",
+      href: "/services",
+      current: isCurrentPath("/services"),
+    },
+    {
+      name: "Virtual Secretary",
+      href: "/virtual_secretary",
+      current: isCurrentPath("/virtual_secretary"),
+    },
+    {
+      name: "About Us",
+      href: "/about_us",
+      current: isCurrentPath("/about_us"),
+    },
+  ];
+
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -27,14 +56,14 @@ const Sidebar = ({ items }: { items: INavigation[] }) => {
           )}
         >
           <div className="relative flex justify-center border-b-[0.2px] py-2">
-            <button className="absolute left-2 top-2" onClick={() => setIsActive((prev) => !prev)}>
-              ✖️
+            <button className="absolute left-2 top-3" onClick={() => setIsActive((prev) => !prev)}>
+              <X className="h-5 w-5 accent-foreground font-semibold stroke-accent-foreground" />
             </button>
-            <h2 className="accent-foreground text-center text-lg">Navigation</h2>
+            <h2 className="accent-foreground text-center text-lg text-primary-foreground">Navigation</h2>
           </div>
 
           <div className="flex flex-col gap-4 p-6 items-start">
-            {items.map((item) => (
+            {navigation.map((item) => (
               <Link
                 key={item.name}
                 className={cn(
@@ -54,3 +83,9 @@ const Sidebar = ({ items }: { items: INavigation[] }) => {
 };
 
 export default Sidebar;
+
+export interface INavigation {
+  name: string;
+  href: string;
+  current: boolean;
+}

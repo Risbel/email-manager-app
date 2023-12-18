@@ -1,7 +1,9 @@
-import AddTaskForm from "./AddTaskForm";
-import TaskItem from "./TaskItem";
+"use client";
+
 import { useGetTasks } from "@/hooks/useGetTasks";
-import SkeletonTaskItems from "./SkeletonTaskItems";
+import AddTaskForm from "./components/AddTaskForm";
+import SkeletonTaskItems from "./components/SkeletonTaskItems";
+import TaskItem from "./components/TaskItem";
 
 const Tasks = () => {
   const { data, isLoading } = useGetTasks();

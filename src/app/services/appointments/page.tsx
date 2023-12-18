@@ -1,12 +1,13 @@
+"use client";
+
+import DetailsAppointment from "@/app/services/appointments/components/DetailsAppointment";
+import SkeletonAppointments from "@/app/services/appointments/components/SkeletonAppointments";
 import getAppointments, { IAppointments } from "@/services/getAppointments";
 import { useEffect, useState } from "react";
-import SkeletonAppointment from "./SkeletonAppointments";
-import DetailsAppointment from "./DetailsAppointment";
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState<IAppointments[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +16,6 @@ const Appointments = () => {
         setAppointments(data);
         setIsLoading(false);
       } catch (error: any) {
-        setError(error);
         setIsLoading(false);
       }
     };
@@ -27,10 +27,10 @@ const Appointments = () => {
     <div>
       {isLoading ? (
         <div>
-          <SkeletonAppointment />
+          <SkeletonAppointments />
         </div>
       ) : (
-        <div className="overflow-hidden overflow-x-scroll w-full bg-secondary px-4 md:px-8">
+        <>
           <div className="flex flex-col gap-6 md:gap-8 pb-20">
             {appointments &&
               appointments.map((appointment) => {
@@ -57,7 +57,7 @@ const Appointments = () => {
                 );
               })}
           </div>
-        </div>
+        </>
       )}
     </div>
   );

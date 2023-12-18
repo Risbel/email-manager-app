@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input, Label } from "@/components/ui/input";
+import { cn } from "@/lib/shadcn-utils";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -47,9 +48,13 @@ const Login = () => {
           >
             <Image width={18} height={18} src="/icon_google.svg" alt="icon google" />
             Sign in with Google
-            {isLoading && (
-              <Image className="animate-spin" width={15} height={15} src="/spinner-secondary.svg" alt="spinner" />
-            )}
+            <Image
+              className={cn("animate-spin", !isLoading && "hidden")}
+              width={15}
+              height={15}
+              src="/spinner-secondary.svg"
+              alt="spinner"
+            />
           </Button>
         </div>
       </div>

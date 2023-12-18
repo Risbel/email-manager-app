@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="p-8 md:p-16">
+    <div className="p-8 md:p-16 pt-16">
       <h1 className="text-3xl pb-4">Lorem</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dolores amet, sunt porro odit quibusdam aliquid,
