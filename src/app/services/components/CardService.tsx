@@ -6,7 +6,7 @@ import Link from "next/link";
 const CardService = ({ className, item, ...props }: ICardServices) => {
   return (
     <Link href={item.link} className={cn(cardService({ className }))} {...props} passHref>
-      <div className="flex justify-center items-center absolute border border-secondary top-2 md:top-4 right-2 md:right-4 p-2 h-6 w-6 md:h-8 md:w-8 rounded-full">
+      <div className="flex justify-center items-center absolute border-2 border-secondary top-2 md:top-4 right-2 md:right-4 p-2 h-6 w-6 md:h-8 md:w-8 rounded-full">
         <span className="text-primary-foreground text-xs md:text-base">{Math.floor(Math.random() * 100)}</span>
       </div>
       <div className="flex justify-center items-center w-full h-full p-4 md:p-8">

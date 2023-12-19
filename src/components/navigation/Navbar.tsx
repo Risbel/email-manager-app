@@ -12,7 +12,7 @@ const Navbar = async () => {
 
   return (
     session && (
-      <div className="flex fixed z-50 w-full justify-between items-center px-2 md:px-8 py-3 bg-primary shadow-silverdark shadow-md">
+      <div className="flex fixed z-50 w-full justify-between items-center px-2 md:px-8 py-3 bg-primary shadow-accent/60 shadow-md">
         <div className="flex gap-4 md:gap-8 items-center">
           <Sidebar />
 
@@ -23,11 +23,11 @@ const Navbar = async () => {
 
         <Navigation />
 
-        <div className="flex gap-2 items-center">
+        <div className="flex md:gap-2 items-center">
           <Image
             src={"/bell.svg"}
-            width={28}
-            height={28}
+            width={26}
+            height={26}
             alt="logo-em"
             priority
             className="hover:scale-105 cursor-pointer"

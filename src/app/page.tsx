@@ -1,31 +1,42 @@
-import CardCalendar from "@/components/hero/CardCalendar";
-import CardDetails from "@/components/hero/CardDetails";
-
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="pt-12">
-      <div className="flex justify-center py-8 bg-secondary">
-        <div className="flex gap-2 md:gap-4 items-center">
-          <Image
-            src={"/mail-svgrepo-com (1).svg"}
-            width={35}
-            height={35}
-            alt="email icon"
-            className="h-6 w-6 md:h-8 md:w-8"
-          />
+    <main>
+      <Image
+        className="w-full hidden md:block"
+        src={"/home-image-robotic-hand.jpg"}
+        height={768}
+        width={1024}
+        alt="home image robotic hand"
+      />
 
-          <h2 className="text-primary text-lg md:text-2xl font-bold">EMAIL MANAGEMENT</h2>
+      <Image
+        className="w-full md:hidden"
+        src={"/home-image-robotic-hand-movile.jpg"}
+        height={667}
+        width={375}
+        alt="home image robotic hand movile"
+      />
+      <div className="flex flex-col gap-4 md:gap-5 absolute w-full top-0 bottom-0 justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-2 lg:gap-4 w-full top-0 bottom-0 justify-center items-center">
+          <Image
+            className="z-40 h-14 w-14 lg:h-16 lg:w-16"
+            src={"/person-headset.svg"}
+            height={60}
+            width={60}
+            alt="person headset icon"
+          />
+          <h1 className="flex flex-col md:flex-row md:gap-4 text-white drop-shadow-lg z-40 text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+            <span>VIRTUAL</span>
+            <span>SECRETARY</span>
+          </h1>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 lg:gap-8 px-4 md:px-12 lg:px-28 my-12 md:my-15">
-        <div className="flex justify-center">
-          <CardDetails />
-        </div>
-        <div className="flex justify-center">
-          <CardCalendar />
-        </div>
+        <Button size={"lg"} variant={"secondary"} className="font-bold w-32">
+          <Link href={"/services"}>START</Link>
+        </Button>
       </div>
     </main>
   );

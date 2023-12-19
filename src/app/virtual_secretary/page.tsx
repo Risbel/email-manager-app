@@ -1,12 +1,31 @@
+import CardCalendar from "@/components/hero/CardCalendar";
+import CardDetails from "@/components/hero/CardDetails";
+import Image from "next/image";
+
 const VirtualSecretary = () => {
   return (
     <div className="p-8 md:p-16 pt-16">
-      <h1 className="text-3xl pb-4">Lorem</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique aperiam velit repudiandae, itaque, eum
-        consequatur placeat nobis iste minima repellat deleniti! Quae laborum modi amet repudiandae ipsa perferendis
-        provident.
-      </p>
+      <div className="flex justify-center py-8 bg-secondary">
+        <div className="flex gap-2 md:gap-4 items-center">
+          <Image
+            src={"/mail-svgrepo-com (1).svg"}
+            width={35}
+            height={35}
+            alt="email icon"
+            className="h-6 w-6 md:h-8 md:w-8"
+          />
+
+          <h2 className="text-primary text-lg md:text-2xl font-bold">EMAIL MANAGEMENT</h2>
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 lg:gap-8 px-4 md:px-12 lg:px-28 my-12 md:my-15">
+        <div className="flex justify-center">
+          <CardDetails />
+        </div>
+        <div className="flex justify-center">
+          <CardCalendar />
+        </div>
+      </div>
     </div>
   );
 };
