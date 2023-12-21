@@ -1,18 +1,13 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/shadcn-utils";
-import { signIn } from "next-auth/react";
 import Image from "next/image";
-import { useState } from "react";
 import LoginForm from "./components/LoginForm";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import SignInGoogle from "./components/SignInGoogle";
 
 const Login = () => {
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <div className="relative flex justify-center items-center h-screen overflow-hidden bg-current">
       <Image
+        priority
         className="blur-sm w-screen hidden md:block"
         src={"/home-image-robotic-hand.jpg"}
         height={768}
@@ -21,51 +16,47 @@ const Login = () => {
       />
 
       <Image
+        priority
         className="blur-sm w-screen md:hidden"
         src={"/home-image-robotic-hand-movile.jpg"}
         height={667}
         width={375}
         alt="home image robotic hand movile"
       />
-      <div className="grid md:grid-cols-2 gap-4 justify-center md:justify-around absolute rounded-xl md:rounded-3xl shadow-md shadow-primary/60 px-4 py-12 w-full md:w-5/6 lg:w-8/12 bg-primary-foreground">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center text-center md:justify-around absolute rounded-xl md:rounded-3xl shadow-md shadow-primary/60 px-4 py-4 md:py-12 w-full md:w-5/6 lg:w-8/12 bg-primary-foreground">
         <div className="lg:px-12">
-          <div className="pb-8">
-            <h1 className="text-center md:text-start font-semibold text-4xl text-primary">Login</h1>
-            <p className="text-center md:text-start font-light text-lg">Login to access to Virtual Secretary</p>
+          <div className="pb-2">
+            <p className="text-start font-light text-md leading-4">
+              <span className="text-destructive/80 font-semibold">Login</span> to access to MySecretary or
+              <span className="text-destructive/80 font-semibold"> Sign Up</span> if you don&apos;t have an acount.
+            </p>
           </div>
 
-          <LoginForm />
-
-          <div className="flex my-4">
-            <div className="border-b border-primary w-full" />
-            <p className="px-2">or</p>
-            <div className="border-b border-primary w-full" />
-          </div>
-
-          <div className="flex justify-center">
-            <Button
-              onClick={() =>
-                signIn("google", {
-                  callbackUrl: "https://secretary-app.vercel.app",
-                })
-              }
-              className="flex items-center gap-2 w-full"
-            >
-              <Image width={18} height={18} src="/icon_google.svg" alt="icon google" />
-              Sign in with Google
-              <Image
-                className={cn("animate-spin", !isLoading && "hidden")}
-                width={15}
-                height={15}
-                src="/spinner-secondary.svg"
-                alt="spinner"
-              />
-            </Button>
-          </div>
+          <Tabs defaultValue="login">
+            <TabsList>
+              <TabsTrigger value="login">
+                <h1 className="text-center font-semibold text-xl text-primary">Login</h1>
+              </TabsTrigger>
+              <TabsTrigger value="signup">
+                <h1 className="text-center font-semibold text-xl text-primary">Sign Up</h1>
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="login">
+              <LoginForm />
+              <div className="flex mb-6">
+                <div className="border-b border-primary w-full" />
+                <p className="px-2 translate-y-2">or</p>
+                <div className="border-b border-primary w-full" />
+              </div>
+              <SignInGoogle />
+            </TabsContent>
+            <TabsContent value="signup">Change your password here.</TabsContent>
+          </Tabs>
         </div>
         <div>
           <Image
-            className="hidden md:block"
+            priority
+            className="hidden md:block w-auto"
             src={"/secretary-on-desktop.jpg"}
             height={350}
             width={450}
