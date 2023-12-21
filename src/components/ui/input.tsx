@@ -4,10 +4,13 @@ import { cn } from "@/lib/shadcn-utils";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const Label = ({ name, htmlfor }: { name: string; htmlfor: string }) => {
+const Label = ({ name, htmlfor, className }: { name: string; htmlfor: string; className?: string }) => {
   return (
     <label
-      className="absolute -top-[12px] md:-top-[16px] left-3 bg-accent-foreground text-primary px-1 text-sm md:text-base"
+      className={cn(
+        "absolute -top-[14px] md:-top-[16px] left-3 bg-accent-foreground rounded-md text-primary px-1 text-sm md:text-base",
+        className
+      )}
       htmlFor={htmlfor}
     >
       {name}
